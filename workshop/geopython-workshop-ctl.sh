@@ -9,8 +9,6 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-alias dockercompose='docker-compose'
-
 # Sniff which Docker Compose variant is installed
 # and set an alias.
 # See https://github.com/geopython/geopython-workshop/issues/82
