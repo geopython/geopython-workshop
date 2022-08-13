@@ -2,19 +2,40 @@
 
 PROGRAM_NAME=$(basename $0)
 
-USAGE="Usage: $PROGRAM_NAME <start|stop|url|clean>"
+USAGE="Usage: $PROGRAM_NAME <start|stop|url|update|clean>"
 
 if [ "$#" -ne 1 ]; then
     echo $USAGE
     exit 1
 fi
 
+alias dockercompose='docker-compose'
+
+# Sniff which Docker Compose variant is installed
+# and set an alias.
+# See https://github.com/geopython/geopython-workshop/issues/82
+if command docker-compose --version &> /dev/null
+then
+  alias dockercompose='docker-compose'
+  echo "Using docker-compose"
+else
+  if !command docker compose version &> /dev/null
+  then
+    echo "Neither dockercompose nor docker compose is installed"
+    echo "Check your Docker Installation"
+    exit 1
+  fi
+  alias dockercompose='docker compose'  
+  echo "Using docker compose"
+fi
+
+# Test for the command
 if [ $1 == "start" ]; then
     $0 stop
-    docker-compose up -d
+    dockercompose up -d
 elif [ $1 == "stop" ]; then
-    docker-compose stop
-    docker-compose rm --force
+    dockercompose stop
+    dockercompose rm --force
 elif [ $1 == "url" ]; then
     # try to open the Jupyter Notebook in Browser
     platform="$(uname | tr '[:upper:]' '[:lower:]')"
@@ -56,5 +77,5 @@ elif [ $1 == "clean" ]; then
         docker rmi ${i}
     done
 else
-    echo $USAGE
+    echo ${USAGE}
 fi
