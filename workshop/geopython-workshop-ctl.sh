@@ -19,7 +19,7 @@ then
 else
   if !command docker compose version &> /dev/null
   then
-    echo "Neither dockercompose nor docker compose is installed"
+    echo "Neither docker-compose nor docker compose is available"
     echo "Check your Docker Installation"
     exit 1
   fi
