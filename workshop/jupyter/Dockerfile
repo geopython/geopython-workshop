@@ -27,7 +27,7 @@
 #
 # =================================================================
 
-FROM ubuntu:focal
+FROM ubuntu:22.04
 
 LABEL maintainer="Just van den Broecke <justb4@gmail.com>"
 
@@ -41,9 +41,10 @@ ARG ADD_PIP_PACKAGES=""
 ENV TZ=${TZ} \
 	LANG=${LANG} \
 	DEBIAN_FRONTEND="noninteractive" \
-	DEB_BUILD_DEPS="software-properties-common build-essential apt-utils" \
-	DEB_PACKAGES="locales locales-all python3-setuptools python3-pip python3-gdal python3-fiona python3-rasterio python3-pyproj ${ADD_DEB_PACKAGES}" \
-	PIP_PACKAGES="jupyter wheel ${ADD_PIP_PACKAGES}"
+	DEB_BUILD_DEPS="gpg-agent software-properties-common build-essential apt-utils python3-dev libproj-dev" \
+	DEB_PACKAGES="locales locales-all proj-bin python3-shapely python3-pyproj python3-setuptools python3-pip python3-gdal python3-fiona python3-rasterio python3-pyproj ${ADD_DEB_PACKAGES}" \
+	PIP_PACKAGES="jupyter ${ADD_PIP_PACKAGES}" \
+	PROJ_DIR="/usr"
 
 COPY ./requirements.txt /jupyter/requirements.txt
 
@@ -53,17 +54,17 @@ RUN \
     apt-get update -y \
     && apt-get upgrade -y \
     && apt-get install -y --fix-missing --no-install-recommends ${DEB_BUILD_DEPS}  \
-    && add-apt-repository ppa:ubuntugis/ubuntugis-unstable \
+    && add-apt-repository ppa:ubuntugis/ubuntugis-unstable && apt-get update -y \
     && apt-get --no-install-recommends install -y ${DEB_PACKAGES} \
     && update-locale LANG=${LANG} \
     && echo "For ${TZ} date=$(date)" && echo "Locale=$(locale)" \
-	&& apt-get remove --purge ${DEB_BUILD_DEPS} -y \
-	&& apt autoremove -y  \
-	&& rm -rf /var/lib/apt/lists/* \
 	&& pip3 install ${PIP_PACKAGES} \
 	&& pip3 install -r /jupyter/requirements.txt \
+	&& apt-get remove --purge ${DEB_BUILD_DEPS} -y \
+	&& apt autoremove -y  \
+	&& rm -rf /var/lib/apt/lists/* 
 	# Patch for now until https://github.com/jupyter-widgets/ipyleaflet/issues/865 solved in version
-	&& sed -i /usr/local/lib/python3.8/dist-packages/ipyleaflet/basemaps.py -e 's/com\/\/tiles/com\/tiles/g'
+	# && sed -i /usr/local/lib/python3.10/dist-packages/ipyleaflet/basemaps.py -e 's/com\/\/tiles/com\/tiles/g'
 
 COPY ./entrypoint.sh /jupyter/start.sh
 
