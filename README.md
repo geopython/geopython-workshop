@@ -45,7 +45,11 @@ NB Jupyter notebook needs a **token**. The token is displayed on startup:
 `http://127.0.0.1:8888/?token=<longtokenhexstring>`.
 
 As Docker Compose may run in background you can make logging 
-output visible via `docker logs --follow geopython-workshop-jupyter` .
+output visible via `docker logs --follow geopython-workshop-jupyter`.
+
+### Notes
+
+- There is an issue with MacOS Monterey where the port 5000 is already used and therefore conflicting to that one used by pygeoapi. If you are facing with this error `OSError: [Errno 48] Address already in use` then your machine is affected. To overcome the issue you can disable the *Airplay Receiver* from `System Preference->Sharing` of your MacOS (detailed description in this blog [post](https://progressstory.com/tech/port-5000-already-in-use-macos-monterey-issue/)).  
 
 ### Bugs and Issues
 
