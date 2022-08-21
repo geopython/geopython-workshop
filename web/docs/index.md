@@ -103,7 +103,7 @@ Below are utility commands. Use when stopped to clean and update.
 ./geopython-workshop-ctl.sh clean
 
 ```
- 
+
 ## Installation Issues
 
 Docker installed but problems installing/running the workshop? Below some tips:
@@ -124,7 +124,7 @@ Go to the `Preferences/Settings | File Sharing...`  menu and make settings accor
 
 You may also run a VirtualBox VM with preferably Ubuntu, install Docker there and run the workshop. Even better if
 you use [Vagrant](https://www.vagrantup.com) to provision/manage your VM. You could even unpack the .zip file
-on your local machine and mount it within the VM, start the workshop there. 
+on your local machine and mount it within the VM, start the workshop there.
 
 In any case, in order to access the services from your local machine, you need to do port mapping from
 ports within the VM to your local machine in order to access the workshop from your local browser.
@@ -133,11 +133,11 @@ The following ports need to be mapped from the VirtualBox VM to your local syste
  
 You will possibly need to enable firewall access for these ports within your VM. Do this as follows:
 
-```
+```shell
 sudo ufw allow 8888/tcp
 sudo ufw allow 5000/tcp
 sudo ufw allow 8001/tcp
-``` 
+```
 
 Within VirtualBox menu you can then map these ports to the same ports on your local system, so the workshop
 is accessed with your local browser via http://127.0.0.1:8888?token=..., http://127.0.0.1:5000 etc.
@@ -146,6 +146,10 @@ is accessed with your local browser via http://127.0.0.1:8888?token=..., http://
 
 The workshop should run on http://127.0.0.1:8888?token="token" but in some cases this may not work.
 In that case you could also try http://0.0.0.0:8888?token="token".
+
+### MacOS Monterey issue
+
+There is an issue with MacOS Monterey where the port 5000 is already used and therefore conflicting with that one used by pygeoapi. If you are facing this error `OSError: [Errno 48] Address already in use` then your machine is affected. To overcome the issue you can disable the *Airplay Receiver* from `System Preferences->Sharing` of your MacOS (detailed description in this blog [post](https://progressstory.com/tech/port-5000-already-in-use-macos-monterey-issue/)).
 
 ## No Docker Installed?
 
