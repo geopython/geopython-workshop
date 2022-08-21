@@ -1,16 +1,17 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/geopython/geopython-workshop/master?filepath=workshop%2Fjupyter%2Fcontent%2Fnotebooks%2F01-introduction.ipynb)
+
 # Doing Geospatial in Python
 
 ## Installation
 
 ### Requirements
 
-The workshop requires [Docker](https://docker.com) 
+The workshop requires [Docker](https://docker.com)
 and [Docker Compose](https://docs.docker.com/compose/) on your system
 
 ### Docker Images
 
-The Docker Images for this workshop are [available on DockerHub](https://hub.docker.com/r/geopython/geopython-workshop). 
+The Docker Images for this workshop are [available on DockerHub](https://hub.docker.com/r/geopython/geopython-workshop).
 The name of the workshop Image is `geopython/geopython-workshop[:latest]`.
 Note that the Docker Images contain mainly all (Python) components/dependencies. The actual workshop content (data+notebooks) will be
 Docker-Volume-mounted.
@@ -44,16 +45,17 @@ NB Jupyter notebook needs a **token**. The token is displayed on startup:
 
 `http://127.0.0.1:8888/?token=<longtokenhexstring>`.
 
-As Docker Compose may run in background you can make logging 
+As Docker Compose may run in background you can make logging
 output visible via `docker logs --follow geopython-workshop-jupyter`.
 
 ### Notes
 
-- There is an issue with MacOS Monterey where the port 5000 is already used and therefore conflicting with that one used by pygeoapi. If you are facing this error `OSError: [Errno 48] Address already in use` then your machine is affected. To overcome the issue you can disable the *Airplay Receiver* from `System Preferences->Sharing` of your MacOS (detailed description in this blog [post](https://progressstory.com/tech/port-5000-already-in-use-macos-monterey-issue/)).  
+- There is an issue with MacOS Monterey where the port 5000 is already used and therefore conflicting with that one used by pygeoapi. If you are facing this error `OSError: [Errno 48] Address already in use` then your machine is affected. To overcome the issue you can disable the *Airplay Receiver* from `System Preferences->Sharing` of your MacOS (detailed description in this blog [post](https://progressstory.com/tech/port-5000-already-in-use-macos-monterey-issue/)).
+- Docker must be managed by non-root users in linux. Please make sure to perform the following [post-installation step](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
 
 ### Bugs and Issues
 
-All bugs, enhancements and issues are managed 
+All bugs, enhancements and issues are managed
 on [GitHub](https://github.com/geopython/geopython-workshop/issues).
 
 ## Contact

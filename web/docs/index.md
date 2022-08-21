@@ -27,7 +27,7 @@ More information on installing Docker can also be found [here](./docker).
 
 ### Optional requirements
 
-Users may optionally install [QGIS](https://qgis.org) as a GIS data viewer. 
+Users may optionally install [QGIS](https://qgis.org) as a GIS data viewer.
 QGIS is a free and open-source cross-platform desktop geographic information
 system application that supports viewing, editing, and analysis of geospatial data.
 
@@ -50,7 +50,7 @@ and `docker-compose` commands are working and available:
 docker version
 docker-compose --version
 ```
- 
+
 If `docker-compose` gives a 'program not found' error:
 
 > In recent versions of Docker the Docker Compose program is part
@@ -116,9 +116,8 @@ In that case you can add the `--insecure` commandline option or copy/paste the d
 ### File/Drive Sharing
 
 The workshop setup involves Docker Volume Mounting.
-For Mac OS and Windows installs be sure to **enable File/Drive Sharing** within Docker Desktop 
-for the directory where you unzipped the workshop.
-Go to the `Preferences/Settings | File Sharing...`  menu and make settings accordingly. 
+For Mac OS and Windows installs be sure to **enable File/Drive Sharing** within Docker Desktop for the directory where you unzipped the workshop.
+Go to the `Preferences/Settings | File Sharing...`  menu and make settings accordingly.
 
 ### Running in VirtualBox
 
@@ -130,7 +129,7 @@ In any case, in order to access the services from your local machine, you need t
 ports within the VM to your local machine in order to access the workshop from your local browser.
 The following ports need to be mapped from the VirtualBox VM to your local system:
  **8888 (Jupyter)**, **5000 (pygeoapi)** and **8001 (pycsw)** .
- 
+
 You will possibly need to enable firewall access for these ports within your VM. Do this as follows:
 
 ```shell
@@ -141,6 +140,10 @@ sudo ufw allow 8001/tcp
 
 Within VirtualBox menu you can then map these ports to the same ports on your local system, so the workshop
 is accessed with your local browser via http://127.0.0.1:8888?token=..., http://127.0.0.1:5000 etc.
+
+### Running Docker with privileged user in linux
+
+Currently, the workshop doesn't support a docker installation that needs the `sudo` command to run Docker. The following [post-installation step](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) in the Docker documentation must be performed before running our script to start the workshop.
 
 ### Cannot Access URL
 
@@ -153,12 +156,10 @@ There is an issue with MacOS Monterey where the port 5000 is already used and th
 
 ## No Docker Installed?
 
-If you somehow were not able to install Docker: 
+If you somehow were not able to install Docker:
 there is a Cloud version of the Jupyter-Notebook-part of the workshop via "Jupyter Binder".
 
-With some limits (e.g. no local geo-services, no data publication), 
-you can follow most of the workshop using a remote Docker instance within your 
-browser via "Jupyter Binder". Click on the button below
+With some limits (e.g. no local geo-services, no data publication), you can follow most of the workshop using a remote Docker instance within your browser via "Jupyter Binder". Click on the button below
 to launch the Workshop Binder Instance. Startup takes a while, be patient...
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/geopython/geopython-workshop/master?filepath=workshop%2Fjupyter%2Fcontent%2Fnotebooks%2F01-introduction.ipynb)
