@@ -46,10 +46,17 @@ Having said this, please feel free to bring your own! Examples:
 Ensure Docker is running on your computer, then verify that the `docker`
 and `docker-compose` commands are working and available:
 
-```bash
-docker version
-docker-compose --version
+
+<div class="termy">
+
+```console
+$ docker version
+
+$ docker-compose --version
 ```
+
+</div>
+
 
 If `docker-compose` gives a 'program not found' error:
 
@@ -66,43 +73,59 @@ If `docker-compose` gives a 'program not found' error:
  
 Below we will download and run the workshop content.
 
-```bash
+<div class="termy">
+
+```console
 curl -O https://codeload.github.com/geopython/geopython-workshop/zip/master
 unzip master
 cd geopython-workshop-master/workshop
 
-# start the workshop
+// start the workshop
+
 ./geopython-workshop-ctl.sh start
 
-# display URL and open in default web browser
+// display URL and open in default web browser
+
 ./geopython-workshop-ctl.sh url
 
-# stop workshop
+// stop workshop
+
 ./geopython-workshop-ctl.sh stop
 ```
+
+</div>
 
 If the above `.sh` script does not work on your system 
 you can execute `docker-compose` directly via:
 
-```bash
-# in dir geopython-workshop-master/workshop
+<div class="termy">
+
+```console
+// in dir geopython-workshop-master/workshop
 docker-compose up -d
 docker logs --follow geopython-workshop-jupyter
-# look for URL+Token and Copy/Paste in browser
+// look for URL+Token and Copy/Paste in browser
 ```
+</div>
 
 Below are utility commands. Use when stopped to clean and update.
 
-```bash
+<div class="termy">
 
-# update the workshop Docker Images in case of new versions
+```console
+// update the workshop Docker Images in case of new versions
+
 ./geopython-workshop-ctl.sh update
 
-# clean your Docker environment from dangling Images/Containers
-# (does not remove the workshop's images, only obsolete ones)
+// clean your Docker environment from dangling Images/Containers
+// (does not remove the workshop's images, only obsolete ones)
+
 ./geopython-workshop-ctl.sh clean
 
 ```
+</div>
+
+
 
 ## Installation Issues
 

@@ -11,6 +11,35 @@ nav:
     - Home: index.md
     - Docker installation: docker.md
 
-theme: spacelab
+theme: 
+    name: material
+    icon:
+        logo: material/language-python
+    palette:
+        # primary: light blue
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          toggle:
+                icon: material/brightness-7
+                name: Switch to dark mode
 
-plugins: []
+    # Palette toggle for dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          toggle:
+            icon: material/brightness-4
+            name: Switch to light mode
+
+plugins:
+    - search
+
+extra_css:
+  - assets/stylesheets/termynal.css
+  - assets/stylesheets/custom.css
+
+extra_javascript:
+    - assets/javascripts/termynal.js
+    - assets/javascripts/custom.js
+
+markdown_extensions:
+  - pymdownx.superfences

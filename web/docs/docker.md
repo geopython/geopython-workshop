@@ -51,9 +51,12 @@ Some notes:
 
 If all goes well, you should be able to run Docker from the command line as follows: [^2]
 
-```bash
+<div class="termy">
+
+```console
 $ docker --version
 Docker version 20.10.17, build 100c701
 $ docker-compose --version  
 Docker Compose version v2.6.1
 ```
+</div>
