@@ -22,7 +22,7 @@ Docker-Volume-mounted. There is no need to build the Docker Image yourself (see 
 
 All services are started using a [Docker Compose file](https://github.com/geopython/geopython-workshop/blob/master/workshop/docker-compose.yml).
 
-Windows users; use [powershell](https://en.wikipedia.org/wiki/PowerShell) or [Linux Subsystem](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) to run below commands.
+Windows users; use [powershell](https://en.wikipedia.org/wiki/PowerShell) or [Linux Subsystem](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) to run below commands. On powershell, use the .ps.sh script and prepend with `bash`, eg. `bash ./geopython-workshop-ctl.ps.sh start`.
 
 ```bash
 cd workshop
