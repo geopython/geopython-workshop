@@ -12,6 +12,7 @@ on:
       - master
     paths:
       # NB currently the Notebooks are not in Docker Image!
+      - workshop/jupyter/content/data
       - workshop/jupyter/Dockerfile
       - workshop/jupyter/entrypoint.sh
       - workshop/jupyter/requirements.txt
@@ -20,6 +21,7 @@ on:
   pull_request:
     paths:
       # NB currently the Notebooks are not in Docker Image!
+      - workshop/jupyter/content/data
       - workshop/jupyter/Dockerfile
       - workshop/jupyter/entrypoint.sh
       - workshop/jupyter/requirements.txt
