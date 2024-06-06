@@ -1,5 +1,3 @@
-version: "3"
-
 # Optional services - not for regular workshop like FOSS4G.
 # start: docker-compose -f docker-compose-services.yml up -d
 # stop:                docker-compose -f docker-compose-services.yml stop
@@ -29,6 +27,6 @@ services:
 
 networks:
   default:
-    external:
-      # Provided by and shared with the Workshop Jupyter Notebook.
-      name: workshop_default
+    # Provided by and shared with the Workshop Jupyter Notebook.
+    name: workshop_default
+    external: true

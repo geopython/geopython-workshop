@@ -48,7 +48,8 @@ elif [ $1 == "url" ]; then
       openapp="cmd /c start"
     fi
 
-    url=$(docker logs geopython-workshop-jupyter 2>&1 | grep "    or http" | sed 's/     or //')
+    # Filter the URL from the log output
+    url=$(docker logs geopython-workshop-jupyter 2>&1 | grep "http://127.0.0.1" | tail -n 1 | xargs)
     if [ -z ${url} ]; then
         echo "workshop not started"
         echo "did you start the workshop? (i.e. bash $0 start)"

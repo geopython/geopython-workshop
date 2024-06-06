@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   jupyter:
     container_name: geopython-workshop-jupyter
@@ -8,3 +6,11 @@ services:
       - 8888:8888
     volumes:
       - ./jupyter/content:/jupyter/content:rw
+#networks:
+#  default:
+#    # Provided by and shared with the services; create and
+#    # enable only when using docker-compose-services.yml as well via:
+#    #    docker network create --driver bridge workshop_default
+#    # this is not part of the standard workshop agenda/chapters
+#    name: workshop_default
+#    external: true
