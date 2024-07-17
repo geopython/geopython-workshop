@@ -22,7 +22,7 @@ Docker-Volume-mounted. There is no need to build the Docker Image yourself (see 
 
 All services are started using a [Docker Compose file](https://github.com/geopython/geopython-workshop/blob/master/workshop/docker-compose.yml).
 
-Windows users; use [powershell](https://en.wikipedia.org/wiki/PowerShell) or [Linux Subsystem](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) to run below commands.
+Linux, macOS, or WSL:
 
 ```bash
 cd workshop
@@ -33,6 +33,18 @@ cd workshop
 
 # NB Possibly best if we add a frontend or use docs ("home") as entrypoint
 ./geopython-workshop-ctl.sh stop
+```
+
+Windows (Powershell or Command Prompt):
+
+```bat
+cd workshop
+
+.\win-geopython-workshop-ctl.bat start
+
+.\win-geopython-workshop-ctl.bat url
+
+.\win-geopython-workshop-ctl.bat stop
 ```
 
 NB [Jupyter notebook](https://en.wikipedia.org/wiki/Project_Jupyter) needs a **token**. The token is displayed in the jupyter container logs on startup:
