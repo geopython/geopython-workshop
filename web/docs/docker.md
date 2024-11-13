@@ -44,7 +44,7 @@ For many platforms a product called `Docker Desktop` is available, which include
 
 Some notes:
 
-* On Windows we recommend using the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl) (WSL) as it also provides a powerful (Bash) command line and has optimal integration with Docker
+* On Windows we recommend using the [Windows Subsystem for Linux v2](https://docs.microsoft.com/en-us/windows/wsl) (WSL2) as it also provides a powerful (Bash) command line and has optimal integration with Docker
 * On Mac, if you are using [Homebrew](https://brew.sh), consider (as the author has) using the [brew Docker formula](https://formulae.brew.sh/formula/Docker)
 * On Linux, you can choose the relevant installer for your platform. You can also use Virtualbox with a Ubuntu Image or use a cloud VM
 * Docker desktop includes a graphical user interface with some interesting options. You can see logs and information about running containers, open their service in a browser or even open a terminal inside the container

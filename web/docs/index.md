@@ -79,7 +79,14 @@ Below we will download and run the workshop content.
 curl -O https://codeload.github.com/geopython/geopython-workshop/zip/master
 unzip master
 cd geopython-workshop-master/workshop
+```
+</div>
 
+Linux, macOS:
+
+<div class="termy">
+
+```console
 // start the workshop
 
 ./geopython-workshop-ctl.sh start
@@ -91,6 +98,25 @@ cd geopython-workshop-master/workshop
 // stop workshop
 
 ./geopython-workshop-ctl.sh stop
+```
+</div>
+
+Windows (Powershell or Command Prompt):
+
+<div class="termy">
+
+```console
+// start the workshop
+
+.\win-geopython-workshop-ctl.bat start
+
+// display URL and open in default web browser
+
+.\win-geopython-workshop-ctl.bat url
+
+// stop workshop
+
+.\win-geopython-workshop-ctl.bat stop
 ```
 
 </div>
