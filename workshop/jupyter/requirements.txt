@@ -9,5 +9,6 @@ folium
 bokeh==2.4.3
 ipyleaflet
 pandas-bokeh
+pydeck
 pygeometa # >0.7 removed by Just
 matplotlib
