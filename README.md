@@ -30,21 +30,19 @@ cd workshop
 ./geopython-workshop-ctl.sh start
 # display URL and open in default web browser, if a browser does not open, then copy the url from the command output to your browser.
 ./geopython-workshop-ctl.sh url
-
-# NB Possibly best if we add a frontend or use docs ("home") as entrypoint
+# stop workshop
 ./geopython-workshop-ctl.sh stop
 ```
 
-Windows (Powershell or Command Prompt):
+Windows (Powershell):
 
-```bat
-cd workshop
-
-.\win-geopython-workshop-ctl.bat start
-
-.\win-geopython-workshop-ctl.bat url
-
-.\win-geopython-workshop-ctl.bat stop
+```bash
+# start workshop
+bash ./geopython-workshop-ctl.sh start
+# display URL and open in default web browser
+bash ./geopython-workshop-ctl.sh url
+# stop workshop
+bash ./geopython-workshop-ctl.sh stop
 ```
 
 NB [Jupyter notebook](https://en.wikipedia.org/wiki/Project_Jupyter) needs a **token**. The token is displayed in the jupyter container logs on startup:
