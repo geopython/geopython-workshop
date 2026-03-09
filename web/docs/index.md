@@ -47,16 +47,11 @@ Ensure Docker is running on your computer, then verify that the `docker`
 and `docker-compose` commands are working and available:
 
 
-<div class="termy">
-
 ```console
 $ docker version
 
 $ docker-compose --version
 ```
-
-</div>
-
 
 If `docker-compose` gives a 'program not found' error:
 

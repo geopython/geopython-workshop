@@ -5,22 +5,34 @@ on:
     paths:
     - 'web/**'
 
-defaults:
-  run:
-    working-directory: web
-
 jobs:
   build:
     name: Build and Deploy Website
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.x'
       - name: Install requirements 📦
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - name: Deploy 📦
-        run: mkdocs gh-deploy --strict --force --message 'update website via GitHub Actions'
+          pip3 install -r web/requirements.txt
+      - name: Build site 📦
+        run: |
+          cd web && zensical build --clean --strict
+          mv site /tmp/
+      - name: checkout gh-pages branch
+        uses: actions/checkout@master
+        with:
+          ref: gh-pages
+      - name: Deploy to GitHub Pages 📦
+        run: |
+          git checkout gh-pages
+          git config --global user.email "tomkralidis@gmail.com"
+          git config --global user.name "Tom Kralidis"
+          ls | grep -v ".nojekyll"| xargs rm -fr
+          mv -f /tmp/site/* .
+          git add .
+          git commit -am "update website via GitHub Actions"
+          git push
