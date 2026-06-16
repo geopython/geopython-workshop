@@ -44,42 +44,40 @@ Having said this, please feel free to bring your own! Examples:
 ## Verifying your environment
 
 Ensure Docker is running on your computer, then verify that the `docker`
-and `docker-compose` commands are working and available:
+and `docker compose` commands are working and available:
 
 
 ```console
 $ docker version
 
+$ docker compose version
+```
+
+If `docker compose` gives an error or is not available, your system may be
+using the legacy Docker Compose command. In that case, try:
+
+```console
 $ docker-compose --version
 ```
 
-If `docker-compose` gives a 'program not found' error:
+If the above command works, use `docker-compose` wherever the workshop
+documentation shows `docker compose`.
 
-> In recent versions of Docker the Docker Compose program is part
-> of the Docker CLI, thus following the `docker <cmd>` pattern. 
-> If `docker-compose --version` as above fails for you, 
-> try `docker compose version` (all spaces). If the latter command works
-> then use `docker compose` where the text shows `docker-compose`.
-> Note that our main Bash script `geopython-workshop-ctl.sh` (see below) will
-> figure out which variant you have installed and call the prober Docker Compose
-> command.
+Note that the workshop control scripts (`geopython-workshop-ctl.sh` and
+`win-geopython-workshop-ctl.bat`) automatically detect which Docker Compose
+variant is installed and invoke the appropriate command.
 
 ## Installation
  
 Below we will download and run the workshop content.
-
-<div class="termy">
 
 ```console
 curl -O https://codeload.github.com/geopython/geopython-workshop/zip/master
 unzip master
 cd geopython-workshop-master/workshop
 ```
-</div>
 
 Linux, macOS:
-
-<div class="termy">
 
 ```console
 // start the workshop
@@ -94,14 +92,11 @@ Linux, macOS:
 
 ./geopython-workshop-ctl.sh stop
 ```
-</div>
 
-Windows (Powershell or Command Prompt):
-
-<div class="termy">
+Windows (PowerShell or Command Prompt):
 
 ```console
-// start the workshop
+// start the workshop (from wthin the /workshop folder)
 
 .\win-geopython-workshop-ctl.bat start
 
@@ -114,24 +109,17 @@ Windows (Powershell or Command Prompt):
 .\win-geopython-workshop-ctl.bat stop
 ```
 
-</div>
-
 If the above `.sh` script does not work on your system 
-you can execute `docker-compose` directly via:
-
-<div class="termy">
+you can execute `docker compose` directly via:
 
 ```console
 // in dir geopython-workshop-master/workshop
-docker-compose up -d
+docker compose up -d
 docker logs --follow geopython-workshop-jupyter
 // look for URL+Token and Copy/Paste in browser
 ```
-</div>
 
 Below are utility commands. Use when stopped to clean and update.
-
-<div class="termy">
 
 ```console
 // update the workshop Docker Images in case of new versions
@@ -144,9 +132,6 @@ Below are utility commands. Use when stopped to clean and update.
 ./geopython-workshop-ctl.sh clean
 
 ```
-</div>
-
-
 
 ## Installation Issues
 

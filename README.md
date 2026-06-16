@@ -34,7 +34,7 @@ cd workshop
 ./geopython-workshop-ctl.sh stop
 ```
 
-Windows (Powershell or Command Prompt):
+Windows (PowerShell or Command Prompt):
 
 ```bat
 cd workshop
@@ -43,7 +43,7 @@ cd workshop
 .\win-geopython-workshop-ctl.bat stop
 ```
 
-Windows (Powershell + bash):
+Windows (PowerShell + bash):
 
 ```bash
 cd workshop
