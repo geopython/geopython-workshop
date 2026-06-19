@@ -2,7 +2,7 @@
 # pushes to DockerHub only for push on the master branch.
 #
 # Inspired from: https://github.com/geopython/GeoHealthCheck/blob/master/.github/workflows/docker.yml
-# Author: Just van den Broecke - 2021
+# Author: Just van den Broecke - 2021+
 #
 name: Docker Build ⚓
 
