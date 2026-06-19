@@ -1,13 +1,14 @@
 mcf:
-    version: 1.0
+    version: 2.0
 
 metadata:
     identifier: woudc-stations
     language: en
     charset: utf8
     hierarchylevel: dataset
-    datestamp: 2019-08-10
     dataseturi: https://woudc.org/data/stations
+    dates:
+        creation: 2019-08-10
 
 spatial:
     datatype: vector

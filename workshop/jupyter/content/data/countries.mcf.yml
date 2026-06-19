@@ -1,13 +1,14 @@
 mcf:
-    version: 1.0
+    version: 2.0
 
 metadata:
     identifier: naturalearth-countries
     language: en
     charset: utf8
     hierarchylevel: dataset
-    datestamp: 2018-05-21
     dataseturi: https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries
+    dates:
+        creation: 2018-05-21
 
 spatial:
     datatype: vector
