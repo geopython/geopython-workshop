@@ -40,7 +40,7 @@ Some notes:
 * On Linux, you can choose the relevant installer for your platform. You can also use Virtualbox with a Ubuntu Image or use a cloud VM
 * Docker desktop includes a graphical user interface with some interesting options. You can see logs and information about running containers, open their service in a browser or even open a terminal inside the container
 
-If all goes well, you should be able to run Docker from the command line as follows: [^2]
+If all goes well, you should be able to run Docker from the command line as follows:
 
 ```console
 $ docker --version
