@@ -203,7 +203,7 @@ micromamba activate pyworkshop
 micromamba install -n pyworkshop -c conda-forge gdal notebook
 cd workshop/jupyter
 # install python workshop requirements
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 # Run the notebook, copy URL (with token) to browser if browser does not open automatically
 jupyter notebook
 ```
