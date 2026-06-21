@@ -8,8 +8,15 @@ See Workshop entry doc https://geopython.github.io/geopython-workshop.
 
 ### Requirements
 
-The workshop requires [Docker](https://docker.com)
-and [Docker Compose](https://docs.docker.com/compose/) on your system
+The workshop uses Jupyter Notebooks. [Jupyter](https://jupyter.org/) is an interactive development environment suitable for documenting and reproducing workflows using live code.
+
+As the installation of all dependencies on all platforms (Windows, Mac, Linux) can be quite involved and complex this workshop provides all components within a Docker Image.
+
+In addition, geospatial web services like pygeoapi and pycsw in this workshop are provided by Docker images.
+
+The core requirement is to have Docker and Docker Compose installed on the system. Once you have Docker and Docker Compose installed you will be able to install and run the workshop without any other dependencies.
+
+Alternatively, if you're confident with Python development, you can run the notebook in a local Anaconda or Python environment. [Read more about running locally](#running-locally)
 
 ### Docker Images
 
@@ -55,8 +62,6 @@ bash ./geopython-workshop-ctl.sh url
 bash ./geopython-workshop-ctl.sh stop
 ```
 
-
-
 NB [Jupyter notebook](https://en.wikipedia.org/wiki/Project_Jupyter) needs a **token**. The token is displayed in the jupyter container logs on startup:
 
 `http://127.0.0.1:8888/?token=<longtokenhexstring>`.
@@ -80,6 +85,26 @@ cd geopython-workshop.git/workshop/jupyter
 - Docker must be managed by non-root users in linux. Please make sure to perform the following [post-installation step](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
 - by default the web services pygeoapi and pycsw are not required for the regular workshop like FOSS4G
 - if you use pygeoapi: there is an issue with MacOS Monterey where the port 5000 is already used and therefore conflicting with that one used by pygeoapi. If you are facing this error `OSError: [Errno 48] Address already in use` then your machine is affected. To overcome the issue you can disable the *Airplay Receiver* from `System Preferences->Sharing` of your MacOS (detailed description in this blog [post](https://progressstory.com/tech/port-5000-already-in-use-macos-monterey-issue/)).
+
+### Running locally
+
+If you're confident with Python development, consider to run the Jupyter notebook locally. The operations below require a [anaconda](https://www.anaconda.com/) or [(micro)mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) environment.
+
+```bash
+# clone the workshop repository
+git clone https://github.com/geopython/geopython-workshop.git
+cd geopython-workshop/
+# create virtual environment
+micromamba create -n pyworkshop python=3.12 jupyterlab -y
+micromamba activate pyworkshop
+# install conda workshop requirements
+micromamba install -n pyworkshop -c conda-forge gdal notebook
+cd workshop/jupyter
+# install python workshop requirements
+pip3 install -r requirements.txt
+# Run the notebook, copy url (with token) to browser if browser does not open automatically
+jupyter notebook
+```
 
 ### Bugs and Issues
 

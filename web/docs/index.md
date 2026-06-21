@@ -25,6 +25,11 @@ able to install and run the workshop without any other dependencies.
 
 More information on installing Docker can also be found [here](./docker.md).
 
+Alternatively, if you're confident with Python development, you can run the notebook 
+in a local Anaconda or Python environment. [Read more about running locally](#running-locally).
+Or run the notebook in the cloud, using `Jupyter Binder`. [Read more about 
+running in binder](#run-notebook-in-the-cloud).
+
 ### Optional requirements
 
 Users may optionally install [QGIS](https://qgis.org) as a GIS data viewer.
@@ -183,12 +188,33 @@ In that case you could also try `http://0.0.0.0:8888?token=<token>`.
 
 There is an issue with MacOS Monterey where the port 5000 is already used and therefore conflicting with that one used by pygeoapi. If you are facing this error `OSError: [Errno 48] Address already in use` then your machine is affected. To overcome the issue you can disable the *Airplay Receiver* from `System Preferences->Sharing` of your MacOS (detailed description in this blog [post](https://progressstory.com/tech/port-5000-already-in-use-macos-monterey-issue/)).
 
-## No Docker Installed?
+## Running locally
+
+If you're confident with python development, consider to run the Jupyter notebook locally. The operations below require a [anaconda](https://www.anaconda.com/) or [(micro)mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) environment.
+
+```bash
+# clone the workshop repository
+git clone https://github.com/geopython/geopython-workshop.git
+cd geopython-workshop/
+# create virtual environment
+micromamba create -n pyworkshop python=3.12 jupyterlab -y
+micromamba activate pyworkshop
+# install conda workshop requirements
+micromamba install -n pyworkshop -c conda-forge gdal notebook
+cd workshop/jupyter
+# install python workshop requirements
+pip3 install -r requirements.txt
+# Run the notebook, copy URL (with token) to browser if browser does not open automatically
+jupyter notebook
+```
+
+## Run notebook in the cloud
 
 If you somehow were not able to install Docker:
-there is a Cloud version of the Jupyter-Notebook-part of the workshop via "Jupyter Binder".
+there is a Cloud version of the Jupyter-Notebook-part of the workshop, 
+available via [Jupyter Binder](https://jupyter.org/binder).
 
-With some limits (e.g. no local geo-services, no data publication), you can follow most of the workshop using a remote Docker instance within your browser via "Jupyter Binder". Click on the button below
+With some limits (e.g. no local geo-services, no data publication), you can follow most of the workshop using a remote Docker instance within your browser via `Jupyter Binder`. Click on the button below
 to launch the Workshop Binder Instance. Startup takes a while, be patient...
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/geopython/geopython-workshop/master?filepath=workshop%2Fjupyter%2Fcontent%2Fnotebooks%2F01-introduction.ipynb)
