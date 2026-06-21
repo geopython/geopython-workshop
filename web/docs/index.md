@@ -25,8 +25,8 @@ able to install and run the workshop without any other dependencies.
 
 More information on installing Docker can also be found [here](./docker.md).
 
-Alternatively, if you're confident with python development, you can run the notebook 
-in a local anaconda or python environment. [Read more about running locally](#running-locally).
+Alternatively, if you're confident with Python development, you can run the notebook 
+in a local Anaconda or Python environment. [Read more about running locally](#running-locally).
 Or run the notebook in the cloud, using `Jupyter Binder`. [Read more about 
 running in binder](#run-notebook-in-the-cloud).
 
@@ -190,11 +190,11 @@ There is an issue with MacOS Monterey where the port 5000 is already used and th
 
 ## Running locally
 
-If you're confident with python development, consider to run the jupyter notebook locally. The operations below require a [anaconda](https://www.anaconda.com/) or [(micro)mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) environment.
+If you're confident with python development, consider to run the Jupyter notebook locally. The operations below require a [anaconda](https://www.anaconda.com/) or [(micro)mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) environment.
 
 ```bash
 # clone the workshop repository
-git clone https://github.com/geopython/geopython-workshop
+git clone https://github.com/geopython/geopython-workshop.git
 cd geopython-workshop/
 # create virtual environment
 micromamba create -n pyworkshop python=3.12 jupyterlab -y
@@ -204,7 +204,7 @@ micromamba install -n pyworkshop -c conda-forge gdal notebook
 cd workshop/jupyter
 # install python workshop requirements
 pip install -r requirements.txt
-# Run the notebook, copy url (with token) to browser if browser does not open automatically
+# Run the notebook, copy URL (with token) to browser if browser does not open automatically
 jupyter notebook
 ```
 
