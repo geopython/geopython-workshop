@@ -403,10 +403,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-docker-installed" class="md-nav__link">
+  <a href="#running-locally" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        No Docker Installed?
+        Running locally
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-notebook-in-the-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Run notebook in the cloud
       </span>
     </span>
   </a>
@@ -660,10 +671,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-docker-installed" class="md-nav__link">
+  <a href="#running-locally" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        No Docker Installed?
+        Running locally
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-notebook-in-the-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Run notebook in the cloud
       </span>
     </span>
   </a>
@@ -733,6 +755,10 @@ and <a href="https://pycsw.org">pycsw</a> in this workshop are provided by Docke
 on the system.  Once you have Docker and Docker Compose installed you will be
 able to install and run the workshop without any other dependencies.</p>
 <p>More information on installing Docker can also be found <a href="./docker/">here</a>.</p>
+<p>Alternatively, if you're confident with Python development, you can run the notebook 
+in a local Anaconda or Python environment. <a href="#running-locally">Read more about running locally</a>.
+Or run the notebook in the cloud, using <code>Jupyter Binder</code>. <a href="#run-notebook-in-the-cloud">Read more about 
+running in binder</a>.</p>
 <h3 id="optional-requirements">Optional requirements<a class="headerlink" href="#optional-requirements" title="Permanent link">&para;</a></h3>
 <p>Users may optionally install <a href="https://qgis.org">QGIS</a> as a GIS data viewer.
 QGIS is a free and open-source cross-platform desktop geographic information
@@ -841,10 +867,27 @@ is accessed with your local browser via <code>http://127.0.0.1:8888?token=...</c
 In that case you could also try <code>http://0.0.0.0:8888?token=&lt;token&gt;</code>.</p>
 <h3 id="macos-monterey-issue">MacOS Monterey issue<a class="headerlink" href="#macos-monterey-issue" title="Permanent link">&para;</a></h3>
 <p>There is an issue with MacOS Monterey where the port 5000 is already used and therefore conflicting with that one used by pygeoapi. If you are facing this error <code>OSError: [Errno 48] Address already in use</code> then your machine is affected. To overcome the issue you can disable the <em>Airplay Receiver</em> from <code>System Preferences-&gt;Sharing</code> of your MacOS (detailed description in this blog <a href="https://progressstory.com/tech/port-5000-already-in-use-macos-monterey-issue/">post</a>).</p>
-<h2 id="no-docker-installed">No Docker Installed?<a class="headerlink" href="#no-docker-installed" title="Permanent link">&para;</a></h2>
+<h2 id="running-locally">Running locally<a class="headerlink" href="#running-locally" title="Permanent link">&para;</a></h2>
+<p>If you're confident with python development, consider to run the Jupyter notebook locally. The operations below require a <a href="https://www.anaconda.com/">anaconda</a> or <a href="https://mamba.readthedocs.io/en/latest/user_guide/mamba.html">(micro)mamba</a> environment.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># clone the workshop repository</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/geopython/geopython-workshop.git
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">cd</span><span class="w"> </span>geopython-workshop/
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># create virtual environment</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>micromamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pyworkshop<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12<span class="w"> </span>jupyterlab<span class="w"> </span>-y
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>micromamba<span class="w"> </span>activate<span class="w"> </span>pyworkshop
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># install conda workshop requirements</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>micromamba<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>pyworkshop<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>gdal<span class="w"> </span>notebook
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nb">cd</span><span class="w"> </span>workshop/jupyter
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># install python workshop requirements</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1"># Run the notebook, copy URL (with token) to browser if browser does not open automatically</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>jupyter<span class="w"> </span>notebook
+</span></code></pre></div>
+<h2 id="run-notebook-in-the-cloud">Run notebook in the cloud<a class="headerlink" href="#run-notebook-in-the-cloud" title="Permanent link">&para;</a></h2>
 <p>If you somehow were not able to install Docker:
-there is a Cloud version of the Jupyter-Notebook-part of the workshop via "Jupyter Binder".</p>
-<p>With some limits (e.g. no local geo-services, no data publication), you can follow most of the workshop using a remote Docker instance within your browser via "Jupyter Binder". Click on the button below
+there is a Cloud version of the Jupyter-Notebook-part of the workshop, 
+available via <a href="https://jupyter.org/binder">Jupyter Binder</a>.</p>
+<p>With some limits (e.g. no local geo-services, no data publication), you can follow most of the workshop using a remote Docker instance within your browser via <code>Jupyter Binder</code>. Click on the button below
 to launch the Workshop Binder Instance. Startup takes a while, be patient...</p>
 <p><a href="https://mybinder.org/v2/gh/geopython/geopython-workshop/master?filepath=workshop%2Fjupyter%2Fcontent%2Fnotebooks%2F01-introduction.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <p>Additional notes for Binder session:</p>
