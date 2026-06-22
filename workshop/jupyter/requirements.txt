@@ -7,7 +7,6 @@ geopandas
 descartes
 folium
 bokeh
-localtileserver
 ipyleaflet
 pydeck
 pygeometa # >0.7 removed by Just
