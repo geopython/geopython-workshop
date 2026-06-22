@@ -102,6 +102,7 @@ micromamba install -n pyworkshop -c conda-forge gdal notebook
 cd workshop/jupyter
 # install python workshop requirements
 pip3 install -r requirements.txt
+cd content/notebooks
 # Run the notebook, copy url (with token) to browser if browser does not open automatically
 jupyter notebook
 ```
