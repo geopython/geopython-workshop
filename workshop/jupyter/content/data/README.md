@@ -17,6 +17,8 @@ and sometimes also GeoJSON.
 NB "Antarctica" has been removed from the "countries" datasets as it gave
 problems with reprojections...
 
-The poi-timis.geojson dataset has been downloaded from geofabrik.de, then filtered
-on certain types and bounds. Data provided by Open Street Map Editors under the
+`sample_geozarr.zarr.zip` has been produced in the scope of this training using numpy with random numbers. 
+
+`poi-timis.geojson` has been downloaded from geofabrik.de, then filtered
+on certain types and bounds. Data provided by OpenStreetMap editors under the
 Open Database License (ODbL) 1.0.
