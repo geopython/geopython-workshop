@@ -16,3 +16,7 @@ and sometimes also GeoJSON.
 
 NB "Antarctica" has been removed from the "countries" datasets as it gave
 problems with reprojections...
+
+The poi-timis.geojson dataset has been downloaded from geofabrik.de, then filtered
+on certain types and bounds. Data provided by Open Street Map Editors under the
+Open Database License (ODbL) 1.0.
