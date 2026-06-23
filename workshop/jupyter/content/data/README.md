@@ -17,4 +17,4 @@ and sometimes also GeoJSON.
 NB "Antarctica" has been removed from the "countries" datasets as it gave
 problems with reprojections...
 
-Sample_geozarr has been produced in the scope of this training using numpy with random numbers. 
+`sample_geozarr.zarr.zip` has been produced in the scope of this training using numpy with random numbers. 
