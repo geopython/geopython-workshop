@@ -10,4 +10,6 @@ web/site
 # data created during workshop
 workshop/jupyter/content/data/woudc-stations.xml
 workshop/jupyter/content/data/srtm/srtm_high_pass.geotiff
-workshop/jupyter/content/notebooks/test/10-geology-faults.gml
+workshop/jupyter/content/notebooks/test/10-boreholes.gml
+workshop/jupyter/content/data/output/world_3857_cog.tif
+workshop/jupyter/content/notebooks/test/10-populated-places-ba.json
