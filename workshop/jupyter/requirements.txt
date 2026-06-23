@@ -13,4 +13,3 @@ pygeometa # >0.7 removed by Just
 matplotlib
 fiona
 rasterio
-
