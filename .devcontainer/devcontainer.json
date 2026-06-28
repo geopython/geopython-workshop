@@ -4,5 +4,8 @@
   "service": "jupyter",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "forwardPorts": [8888, 5000, 8001],
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  },
   "postStartCommand": "docker network create workshop_default || true && docker compose -f /workspaces/${localWorkspaceFolderBasename}/workshop/docker-compose-services.yml up -d && jupyter notebook --ip 0.0.0.0 --no-browser --port 8888 --allow-root"
 }
