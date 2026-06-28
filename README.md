@@ -107,6 +107,17 @@ cd content/notebooks
 jupyter notebook
 ```
 
+### Running from Github Codespaces
+
+You can also use Github Codespaces after forking the repository:
+<img width="719" height="248" alt="image" src="https://github.com/user-attachments/assets/aa467a75-9ab9-46a2-98d3-ca8c4c278481" />
+
+You will need to run ```jupyter server list``` in the Terminal to get your Jupyter token:
+<img width="1057" height="854" alt="image" src="https://github.com/user-attachments/assets/2cfa5e21-0cad-43f3-bcee-ff158d7f71ea" />
+
+Then you can open port 8888 in the browser:
+<img width="1181" height="853" alt="image" src="https://github.com/user-attachments/assets/5f3b5171-1771-47d3-a300-9c956d68dfd5" />
+
 ### Bugs and Issues
 
 All bugs, enhancements and issues are managed
