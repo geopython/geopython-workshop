@@ -1,4 +1,5 @@
 {
   "name": "GeoPython",
-  "image": "geopython/geopython-workshop:latest"
+  "image": "geopython/geopython-workshop:latest",
+  "forwardPorts": [8888]
 }
