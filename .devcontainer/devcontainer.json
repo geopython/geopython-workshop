@@ -7,5 +7,5 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
-  "postStartCommand": "docker network inspect workshop_default >/dev/null 2>&1 || docker network create workshop_default && docker compose -f /workspaces/${localWorkspaceFolderBasename}/workshop/docker-compose-services.yml up -d && jupyter notebook --ip 0.0.0.0 --no-browser --port 8888 --allow-root"
+  "postStartCommand": "docker compose -f /workspaces/${localWorkspaceFolderBasename}/workshop/docker-compose-services.yml up -d && jupyter notebook --ip 0.0.0.0 --no-browser --port 8888 --allow-root"
 }
