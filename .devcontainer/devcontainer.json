@@ -3,9 +3,9 @@
   "dockerComposeFile": "../workshop/docker-compose.yml",
   "service": "jupyter",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "forwardPorts": [8888, 5000, 8001],
+  "forwardPorts": [8888, 8001],
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
-  "postStartCommand": "bash -lc 'echo Closing forwarded ports; for p in $(code --list-ports 2>/dev/null | grep 5000 || true); do echo closing $p; done; docker network inspect workshop_default >/dev/null 2>&1 || docker network create workshop_default && docker compose -f /workspaces/${localWorkspaceFolderBasename}/workshop/docker-compose-services.yml up -d && jupyter notebook --ip 0.0.0.0 --no-browser --port 8888 --allow-root"
+  "postStartCommand": "docker network inspect workshop_default >/dev/null 2>&1 || docker network create workshop_default && docker compose -f /workspaces/${localWorkspaceFolderBasename}/workshop/docker-compose-services.yml up -d && jupyter notebook --ip 0.0.0.0 --no-browser --port 8888 --allow-root"
 }
