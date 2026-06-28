@@ -1,5 +1,6 @@
 {
   "name": "GeoPython",
   "image": "geopython/geopython-workshop:latest",
-  "forwardPorts": [8888]
+  "forwardPorts": [8888],
+  "postStartCommand": "jupyter lab --ip=0.0.0.0 --no-browser"
 }
