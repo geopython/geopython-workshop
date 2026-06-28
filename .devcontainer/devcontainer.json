@@ -1,6 +1,11 @@
 {
   "name": "GeoPython",
-  "image": "geopython/geopython-workshop:latest",
-  "forwardPorts": [8888],
+  "dockerComposeFile": [
+    "../workshop/docker-compose.yml",
+    "../workshop/docker-compose-services.yml"
+  ],
+  "service": "jupyter",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "forwardPorts": [8888, 5000, 8001],
   "postStartCommand": "jupyter notebook --ip 0.0.0.0 --no-browser --port 8888 --allow-root --IdentityProvider.token=''"
 }
