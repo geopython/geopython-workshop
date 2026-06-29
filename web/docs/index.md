@@ -209,10 +209,29 @@ cd content/notebooks
 jupyter notebook
 ```
 
-## Run notebook in the cloud
+## Running this workshop via online services
 
-If you somehow were not able to install Docker:
-there is a Cloud version of the Jupyter-Notebook-part of the workshop, 
+If you somehow were not able to install Docker, or had trouble starting the workshop, the following option exist for running on the cloud:
+
+### GitHub Codespaces
+
+To run this workshop via GitHub Codespaces, please complete the following steps:
+
+- Navigate to https://github.com/geopython/geopython-workshop
+- click the 'Codespaces' tab
+- click 'Create codespace on master'
+- click on the new codespace (new tab/window opens), note that this will take some time to initialize
+- once a terminal prompt is available (the `TERMINAL` tab), type the following command: `jupyter server list`
+- copy the value of the `TOKEN_VALUE` where `http://0.0.0.0:8888/?token=TOKEN_VALUE :: /jupyter/content/notebooks`
+- click the `PORTS` tab, however over the line of port 8888 (in the `DEBUG CONSOLE` column), and click on the globe icon (new tab/window opens)
+- in the new tab/window, paste the `TOKEN_VALUE`, and click 'Log in'
+- the workshop notebooks should now be fully available for interactive learning!
+
+Note that a GitHub account is required.
+
+### Binder
+
+There is a Cloud version of the Jupyter-Notebook-part of the workshop, 
 available via [Jupyter Binder](https://jupyter.org/binder).
 
 With some limits (e.g. no local geo-services, no data publication), you can follow most of the workshop using a remote Docker instance within your browser via `Jupyter Binder`. Click on the button below
