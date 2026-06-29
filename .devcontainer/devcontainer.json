@@ -1,0 +1,11 @@
+{
+  "name": "GeoPython",
+  "dockerComposeFile": "../workshop/docker-compose.yml",
+  "service": "jupyter",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "forwardPorts": [8888, 8001],
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  },
+  "postStartCommand": "docker compose -f /workspaces/${localWorkspaceFolderBasename}/workshop/docker-compose-services.yml up -d && jupyter notebook --ip 0.0.0.0 --no-browser --port 8888 --allow-root"
+}
