@@ -414,13 +414,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-notebook-in-the-cloud" class="md-nav__link">
+  <a href="#running-this-workshop-via-online-services" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Run notebook in the cloud
+        Running this workshop via online services
       </span>
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Running this workshop via online services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-codespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GitHub Codespaces
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binder" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Binder
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -682,13 +710,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-notebook-in-the-cloud" class="md-nav__link">
+  <a href="#running-this-workshop-via-online-services" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Run notebook in the cloud
+        Running this workshop via online services
       </span>
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Running this workshop via online services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-codespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GitHub Codespaces
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binder" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Binder
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -757,8 +813,7 @@ able to install and run the workshop without any other dependencies.</p>
 <p>More information on installing Docker can also be found <a href="./docker/">here</a>.</p>
 <p>Alternatively, if you're confident with Python development, you can run the notebook 
 in a local Anaconda or Python environment. <a href="#running-locally">Read more about running locally</a>.
-Or run the notebook in the cloud, using <code>Jupyter Binder</code>. <a href="#run-notebook-in-the-cloud">Read more about 
-running in binder</a>.</p>
+Or run the notebook in the cloud, using GitHub Codespaces or <code>Jupyter Binder</code>. <a href="#running-this-workshop-via-online-services">Read more about running via online services</a>.</p>
 <h3 id="optional-requirements">Optional requirements<a class="headerlink" href="#optional-requirements" title="Permanent link">&para;</a></h3>
 <p>Users may optionally install <a href="https://qgis.org">QGIS</a> as a GIS data viewer.
 QGIS is a free and open-source cross-platform desktop geographic information
@@ -884,9 +939,24 @@ In that case you could also try <code>http://0.0.0.0:8888?token=&lt;token&gt;</c
 </span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1"># Run the notebook, copy URL (with token) to browser if browser does not open automatically</span>
 </span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>jupyter<span class="w"> </span>notebook
 </span></code></pre></div>
-<h2 id="run-notebook-in-the-cloud">Run notebook in the cloud<a class="headerlink" href="#run-notebook-in-the-cloud" title="Permanent link">&para;</a></h2>
-<p>If you somehow were not able to install Docker:
-there is a Cloud version of the Jupyter-Notebook-part of the workshop, 
+<h2 id="running-this-workshop-via-online-services">Running this workshop via online services<a class="headerlink" href="#running-this-workshop-via-online-services" title="Permanent link">&para;</a></h2>
+<p>If you somehow were not able to install Docker, or had trouble starting the workshop, the following option exist for running on the cloud:</p>
+<h3 id="github-codespaces">GitHub Codespaces<a class="headerlink" href="#github-codespaces" title="Permanent link">&para;</a></h3>
+<p>To run this workshop via GitHub Codespaces, please complete the following steps:</p>
+<ul>
+<li>Navigate to <a href="https://github.com/geopython/geopython-workshop">https://github.com/geopython/geopython-workshop</a></li>
+<li>click the 'Codespaces' tab</li>
+<li>click 'Create codespace on master'</li>
+<li>click on the new codespace (new tab/window opens), note that this will take some time to initialize</li>
+<li>once a terminal prompt is available (the <code>TERMINAL</code> tab), type the following command: <code>jupyter server list</code></li>
+<li>copy the value of the <code>TOKEN_VALUE</code> where <code>http://0.0.0.0:8888/?token=TOKEN_VALUE :: /jupyter/content/notebooks</code></li>
+<li>click the <code>PORTS</code> tab, however over the line of port 8888 (in the <code>DEBUG CONSOLE</code> column), and click on the globe icon (new tab/window opens)</li>
+<li>in the new tab/window, paste the <code>TOKEN_VALUE</code>, and click 'Log in'</li>
+<li>the workshop notebooks should now be fully available for interactive learning!</li>
+</ul>
+<p>Note that a GitHub account is required.</p>
+<h3 id="binder">Binder<a class="headerlink" href="#binder" title="Permanent link">&para;</a></h3>
+<p>There is a Cloud version of the Jupyter-Notebook-part of the workshop, 
 available via <a href="https://jupyter.org/binder">Jupyter Binder</a>.</p>
 <p>With some limits (e.g. no local geo-services, no data publication), you can follow most of the workshop using a remote Docker instance within your browser via <code>Jupyter Binder</code>. Click on the button below
 to launch the Workshop Binder Instance. Startup takes a while, be patient...</p>
