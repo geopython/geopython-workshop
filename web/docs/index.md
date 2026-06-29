@@ -27,8 +27,7 @@ More information on installing Docker can also be found [here](./docker.md).
 
 Alternatively, if you're confident with Python development, you can run the notebook 
 in a local Anaconda or Python environment. [Read more about running locally](#running-locally).
-Or run the notebook in the cloud, using `Jupyter Binder`. [Read more about 
-running in binder](#run-notebook-in-the-cloud).
+Or run the notebook in the cloud, using GitHub Codespaces or `Jupyter Binder`. [Read more about running via online services](#running-this-workshop-via-online-services).
 
 ### Optional requirements
 
