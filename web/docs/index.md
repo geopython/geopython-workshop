@@ -214,6 +214,8 @@ If you somehow were not able to install Docker, or had trouble starting the work
 
 ### GitHub Codespaces
 
+**Tip:** the simplest way is to open the Codespace in VS Code (the default when you launch a Codespace) and run the notebooks directly from the editor — select the Python kernel when prompted and run the cells. VS Code talks to the kernel directly, so you can skip the Jupyter token steps below.
+
 To run this workshop via GitHub Codespaces, please complete the following steps:
 
 - Navigate to https://github.com/geopython/geopython-workshop
