@@ -7,5 +7,13 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
   "postStartCommand": "docker compose -f /workspaces/${localWorkspaceFolderBasename}/workshop/docker-compose-services.yml up -d && jupyter notebook --ip 0.0.0.0 --no-browser --port 8888 --allow-root"
 }

@@ -109,6 +109,12 @@ jupyter notebook
 
 ### Running from Github Codespaces
 
+> **Tip:** the simplest way to run the exercises is to open the Codespace in
+> VS Code (the default when you launch a Codespace) and run the notebooks from
+> the editor — select the Python kernel when prompted and run the cells. VS Code
+> talks to the kernel directly, so you can skip the Jupyter token and port-8888
+> steps described below.
+
 You can also use Github Codespaces after forking the repository:
 <img width="719" height="248" alt="image" src="https://github.com/user-attachments/assets/aa467a75-9ab9-46a2-98d3-ca8c4c278481" />
 
