@@ -25,6 +25,9 @@ on:
       - workshop/jupyter/requirements.txt
       - .github/workflows/docker.yml
 
+  release:
+    types: [published]
+
 jobs:
   # Single job to build Docker Image and push (master-branch only) to DockerHub
   build_push:
